@@ -26,7 +26,7 @@ def print_main_menu():
     print("\n")
 
 def list_dir():
-    global curdir,curdirs
+    global curdir, curdirs
     lst = []
     item = ""
     for item in os.listdir(curdir):
