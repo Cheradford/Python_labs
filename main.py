@@ -1,16 +1,30 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import tkinter
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def func():
+        label_visible_false.pack()
+        button_visible_false.pack()
+        label_visible_true.pack_forget()
+        button_visible_true.pack_forget()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def visible_true():
+        label_visible_false.pack_forget()
+        button_visible_false.pack_forget()
+        label_visible_true.pack()
+        button_visible_true.pack()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+root = tkinter.Tk()
+root.geometry("400x400")
+label_visible_true = tkinter.Label(root, text='Не скрытый текст')
+label_visible_true.pack()
+
+button_visible_true = tkinter.Button(root, text='Не скрытая кнопка', command=func)
+button_visible_true.pack()
+
+label_visible_false = tkinter.Label(root, text='Скрытый текст')
+
+button_visible_false = tkinter.Button(root, text='Скрытая кнопка', command=visible_true)
+
+root.mainloop()
