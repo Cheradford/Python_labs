@@ -1,30 +1,19 @@
-import tkinter
+def solution(a, b, c):
+    if (a == 0) or (b == 0) or (c == 0):
+        print("Ошибка")
+    else:
+        D = b ** 2 - 4 * a * c
+        if D < 0:
+            print("Нет корней")
+        elif D == 0:
+            print("Корень уравнения: ", (-b) / (2 * a))
+        else:
+            x1 = (-b + D ** (0.5)) / (2 * a)
+            x2 = (-b - D ** (0.5)) / (2 * a)
+            print("Корни уравнения: x1 =", x1, " x2= ", x2)
 
 
-def func():
-        label_visible_false.pack()
-        button_visible_false.pack()
-        label_visible_true.pack_forget()
-        button_visible_true.pack_forget()
-
-
-def visible_true():
-        label_visible_false.pack_forget()
-        button_visible_false.pack_forget()
-        label_visible_true.pack()
-        button_visible_true.pack()
-
-
-root = tkinter.Tk()
-root.geometry("400x400")
-label_visible_true = tkinter.Label(root, text='Не скрытый текст')
-label_visible_true.pack()
-
-button_visible_true = tkinter.Button(root, text='Не скрытая кнопка', command=func)
-button_visible_true.pack()
-
-label_visible_false = tkinter.Label(root, text='Скрытый текст')
-
-button_visible_false = tkinter.Button(root, text='Скрытая кнопка', command=visible_true)
-
-root.mainloop()
+a = int(input("Введите коэффицент a>>"))
+b = int(input("Введите коэффицент b>>"))
+c = int(input("Введите коэффицент c>>"))
+solution(a, b, c)

@@ -14,13 +14,11 @@ def sycleShift(ch: int, shift: int) -> int:
         for _ in range(abs(shift)):
             l = ch // 2
             r = ch % 2
-            print(bin(l), bin(r))
             ch = (r << bitLen - 1) + l
     else:
         for i in range(abs(shift)):
             l = ch // (2 ** (bitLen - 1))
             r = ch % (2 ** (bitLen - 1))
-            print(bin(l), bin(r))
             ch = (r << 1) + l
 
     return ch
@@ -28,7 +26,6 @@ def sycleShift(ch: int, shift: int) -> int:
 def Cicle(txt, key):
     temp = ""
     for i in txt:
-        print(i)
         temp += chr(sycleShift(ord(i), key))
     return temp
 

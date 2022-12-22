@@ -1,7 +1,6 @@
-import copy
 import tkinter.filedialog
 from tkinter import *
-import sys, os, platform
+import os
 import subprocess
 import time
 

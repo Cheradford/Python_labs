@@ -1,7 +1,6 @@
 import random
-import copy
 from tkinter import *
-from tkinter import ttk
+
 
 
 class Coordinates:
@@ -112,7 +111,7 @@ class Example(Frame):
 
         for i in range(0,6):
             point1 = self.way[i]
-            canvas.create_oval(point1.x + scale, point1.y + scale, point1.x - scale, point1.y - scale, fill='red', width=scale/2)
+            canvas.create_oval(point1.x * scale, point1.y * scale, point1.x * scale, point1.y * scale, fill='red', width=scale)
 
         for i in range(7, len(self.way)):
             point1 = self.way[i - 1]
